@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Navbar from "@/components/base/navbar";
 import HeroSection from "@/components/base/heroSection";
 import FeatureSection from "@/components/base/featureSection";
@@ -11,18 +10,15 @@ export default async function Home() {
   const session = await getServerSession(authOptions);
   return (
      <div className="min-h-screen flex flex-col ">
-      {/* Header */}
+  
       <Navbar user={session?.user ?? null}/>
-      {/* Hero Section */}
+  
       <HeroSection />
 
-      {/* Features Section */}
       <FeatureSection />
 
-      {/* User Reviews Section */}
       <UserReviews />
 
-      {/* Footer */}
       <Footer />
     </div>
   );

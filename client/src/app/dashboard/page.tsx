@@ -25,7 +25,6 @@ const Dashboard = async () => {
 
         <Separator />
 
-        {/* Group Chat Cards */}
         <section>
           {groups.length === 0 ? (
             <Card>

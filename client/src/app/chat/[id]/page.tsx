@@ -5,7 +5,7 @@ import { fetchChatGroup, fetchChatGroupUsers } from "@/fetch/groupFetch";
 import { notFound } from "next/navigation";
 import React from "react";
 
-export default async function chat({ params }: { params: { id: string } }) {
+export default async function page({ params }: { params: { id: string } }) {
   const { id } = params;
   if (params.id.length !== 36) {
     return notFound();
@@ -15,7 +15,7 @@ export default async function chat({ params }: { params: { id: string } }) {
     return notFound();
   }
   const chatGroupUsers: Array<GroupChatUserType> | [] =
-    await fetchChatGroupUsers(params?.id);
+    await fetchChatGroupUsers(id);
   const chats: Array<MessageType> | [] = await fetchChats(id);
 
   return (
